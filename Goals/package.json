@@ -20,12 +20,15 @@
     "@angular/platform-browser": "~9.0.7",
     "@angular/platform-browser-dynamic": "~9.0.7",
     "@angular/router": "~9.0.7",
+    "@ngx-progressbar/core": "^3.0.2",
+    "@ngx-progressbar/http-client": "^3.0.2",
     "bootstrap": "^4.4.1",
+    "firebase": ">= 5.5.7 <8",
     "popper": "^1.0.1",
     "rxjs": "~6.5.4",
+    "rxjs-compat": "^6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2",
-    "firebase": ">= 5.5.7 <8"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.7",

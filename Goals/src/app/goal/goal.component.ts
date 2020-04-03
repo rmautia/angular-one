@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Goal } from '../goal';
-import { GoalService } from '../goal-service/goal.service';
 import { GOALS } from '../goal';
+import { GoalService } from '../goal-service/goal.service';
 import { AlertService } from '../alert-service/alert.service';
+import { QuoteRequestService } from '../quote-http/quote-request.service';
 import { Quote } from '../quote-class/quote';
 
 @Component({
@@ -18,7 +19,7 @@ goals:Goal[];
 alertService:AlertService;
 quote:Quote;
 
-constructor(goalService: GoalService, alertService:AlertService, private http:HttpClient) {
+constructor(goalService: GoalService, alertService:AlertService, private quoteservice:QuoteRequestService) {
     this.goals = goalService.getGoals();
     this.alertService = alertService;
    }
@@ -44,19 +45,11 @@ constructor(goalService: GoalService, alertService:AlertService, private http:Ht
   }
 
   
-   
+  
 
   ngOnInit(){
-    interface ApiResponse{
-      author:string;
-      quote:string;
-    }
-
-    this.http.get<ApiResponse>("http://quotes.stormconsultancy.co.uk/random.json").subscribe(data=>{
-      // Succesful API request
-      this.quote = new Quote(data.author, data.quote)
-    })
-
+    this.quoteservice.quoteRequest()
+    this.quote = this.quoteservice.quote
   }
 
 }

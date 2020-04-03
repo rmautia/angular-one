@@ -1,4 +1,5 @@
 <div class="container">
+  <ng-progress></ng-progress>
   <h1>MY GOALS</h1>
   <hr>
 
@@ -7,8 +8,9 @@
       <div *ngFor='let goal of goals;let i = index'>
         <div>
           <h6 id={{i}} appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</h6>
-          <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+          <button (click)='toggleDetails(i)' class="btn btn-primary">Show Details</button>
         </div>
+    
 
         <div *ngIf='goal.showDescription'>
           <app-goal-detail  [goal]='goal' (isComplete) = 'deleteGoal($event,i)'></app-goal-detail>
