@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
+
+
 import { AppComponent } from './app.component';
 import { GoalComponent } from './goal/goal.component';
 import { GoalDetailComponent } from './goal-detail/goal-detail.component';
@@ -14,6 +15,8 @@ import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import {RoutingModule} from './routing/routing.module';
 
 @NgModule({
   declarations: [
@@ -25,10 +28,11 @@ import { NavbarComponent } from './navbar/navbar.component';
     GoalFormComponent,
     AboutComponent,
     NavbarComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RoutingModule,
     FormsModule,
     HttpClientModule,
     NgProgressModule.forRoot(),
